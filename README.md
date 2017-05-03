@@ -59,7 +59,7 @@ Goals:
 - Add info sections containing links to personal pages
 - Production README
 
-###Bonus Features
+### Bonus Features
 - A "shoot" feature to attack enemies
 - Additional level
 - Multiple lives
