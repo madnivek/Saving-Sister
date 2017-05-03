@@ -20,6 +20,9 @@ This project will also include:
 
 The game will consist of a single game screen and all controls will be handled via the keyboard. Main controls include moving left and right, and jumping. Time permitting, a "shoot" button/feature will also be implemented.
 
+
+![wireframes](https://github.com/madnivek/Saving-Sister/blob/master/ss_wireframe.png)
+
 ### Architecture and Technologies
 
 The project will be implemented using the following technologies:
