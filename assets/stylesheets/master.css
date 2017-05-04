@@ -1,0 +1,18 @@
+/*.main {
+  display:flex;
+  justify-content: center;
+}*/
+
+/*#canvas {
+  margin: 0 auto;
+}*/
+
+#background-canvas{
+  position: relative;
+  z-index: -1;
+}
+
+#game-canvas{
+  position: absolute;
+  z-index: 1;
+}
