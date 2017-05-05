@@ -7,6 +7,11 @@
   margin: 0 auto;
 }*/
 
+.main {
+  display: flex;
+}
+
+
 #background-canvas{
   position: relative;
   z-index: -1;
@@ -15,4 +20,9 @@
 #game-canvas{
   position: absolute;
   z-index: 1;
+}
+
+.intro-text {
+  letter-spacing: .15em;
+  width:300px;
 }

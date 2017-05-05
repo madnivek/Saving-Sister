@@ -1,0 +1,33 @@
+{
+  "name": "SavingSister",
+  "version": "1.0.0",
+  "description": "### Saving Sister is a game inspired by classic side scrollers such as Super Mario World. The game features a young heroine named Lily who is on a journey to rescue her younger twin sister (Lyn) from the evil clutches of Voldemort.",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "webpack": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madnivek/Saving-Sister.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madnivek/Saving-Sister/issues"
+  },
+  "homepage": "https://github.com/madnivek/Saving-Sister#readme"
+}

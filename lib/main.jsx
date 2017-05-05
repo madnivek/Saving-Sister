@@ -3,14 +3,13 @@ import Background from './background.js';
 import Sprite from './sprite.js';
 import SavingSister from './saving_sister.js';
 import setInputListeners from './util/input.js';
+import ReactDOM from 'react-dom';
+import React from 'react';
+import Menu from './menu_component';
 
 document.addEventListener('DOMContentLoaded', () => {
   const resources = new Resources();
   resources.load([
-    // './assets/backgrounds/cloudy-day.png',
-    // './assets/backgrounds/cloudy_castle.jpg',
-    // './assets/backgrounds/trees.png',
-    // './assets/backgrounds/background.jpg',
     './assets/backgrounds/world-background.png',
     './assets/character_sprites/lyn_sprite.png',
     './assets/platforms/grass-left.png',
@@ -37,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gameCanvas.height = 900;
 
     const ssGame = new SavingSister(gameCtx, resources);
+
+    ReactDOM.render(<Menu ssGame={ssGame} />, document.getElementById('menu'));
+
 
   });
 });
