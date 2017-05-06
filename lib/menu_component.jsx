@@ -23,8 +23,8 @@ class Menu extends React.Component {
 
   handleStart(){
     this.closeModal();
-    this.props.ssGame.togglePause();
-    this.props.ssGame.run();
+    this.props.ssGame.reset();
+    this.props.ssGame.init();
     const buttonText = this.state.buttonText === "START" ? "PAUSE" : "START";
     this.setState({buttonText});
   }

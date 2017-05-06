@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
   resources.load([
     './assets/backgrounds/world-background.png',
     './assets/character_sprites/lyn_sprite.png',
+    './assets/character_sprites/voldemort.png',
     './assets/platforms/grass-left.png',
     './assets/platforms/grass-right.png',
     './assets/platforms/grass-mid.png',
     './assets/platforms/grass-single.png',
-    './assets/other/bolt_sprite.png'
+    './assets/other/bolt_sprite.png',
   ]);
 
   setInputListeners();
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gameCanvas.width = 1200;
     gameCanvas.height = 900;
 
-    const ssGame = new SavingSister(gameCtx, resources);
+    const ssGame = new SavingSister(gameCtx, gameCanvas, resources);
 
     ReactDOM.render(<Menu ssGame={ssGame} />, document.getElementById('menu'));
 
