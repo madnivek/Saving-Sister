@@ -1,28 +1,49 @@
-/*.main {
-  display:flex;
-  justify-content: center;
-}*/
+/*RESET*/
 
-/*#canvas {
-  margin: 0 auto;
-}*/
-
-.main {
-  display: flex;
+body, h1, h2, h3, p, div, nav, ul, li {
+  margin: 0;
+  padding: 0;
+  background: inherit;
+  font-family: inherit;
+  color: inherit;
 }
 
-
-#background-canvas{
+#canvas {
   position: relative;
-  z-index: -1;
 }
 
-#game-canvas{
+#game-canvas, #background-canvas {
   position: absolute;
-  z-index: 1;
+}
+
+/*NAV MENU*/
+
+.nav-button{
+  position:absolute;
+  top: 30px;
+  left: 30px;
 }
 
 .intro-text {
   letter-spacing: .15em;
   width:300px;
+}
+
+.nav-menu {
+  position: relative;
+  background: grey;
+  width: 1157px;
+  height: 855px;
+  left:20px;
+  top: 20px;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+.nav-menu-overlay {
+  position: absolute;
+  background: transparent;
+  height: 1500px;
+  width: 1500px;
 }
