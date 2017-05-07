@@ -11098,14 +11098,26 @@ var Menu = function (_React$Component) {
     _reactModal2.default.setAppElement(appElement);
     _this.openModal = _this.openModal.bind(_this);
     _this.closeModal = _this.closeModal.bind(_this);
+    _this.openInfo = _this.openInfo.bind(_this);
+    _this.closeInfo = _this.closeInfo.bind(_this);
     _this.handleStart = _this.handleStart.bind(_this);
     _this.handleMute = _this.handleMute.bind(_this);
     _this.buttonText = "START";
-    _this.state = { modalIsOpen: true, mute: false };
+    _this.state = { modalIsOpen: true, infoOpen: false, mute: false };
     return _this;
   }
 
   _createClass(Menu, [{
+    key: 'openInfo',
+    value: function openInfo() {
+      if (this.props.ssGame.gameOver) {
+        this.buttonText = "START";
+      } else {
+        this.props.ssGame.togglePause();
+      }
+      this.setState({ infoOpen: true });
+    }
+  }, {
     key: 'openModal',
     value: function openModal() {
       if (this.props.ssGame.gameOver) {
@@ -11119,6 +11131,11 @@ var Menu = function (_React$Component) {
     key: 'closeModal',
     value: function closeModal() {
       this.setState({ modalIsOpen: false });
+    }
+  }, {
+    key: 'closeInfo',
+    value: function closeInfo() {
+      this.setState({ infoOpen: false });
     }
   }, {
     key: 'handleMute',
@@ -11142,6 +11159,7 @@ var Menu = function (_React$Component) {
         this.props.ssGame.togglePause();
       }
       this.closeModal();
+      this.closeInfo();
     }
   }, {
     key: 'render',
@@ -11169,6 +11187,11 @@ var Menu = function (_React$Component) {
           'button',
           { className: 'nav-button', onClick: this.openModal },
           'MENU'
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: 'nav-button info', onClick: this.openInfo },
+          'INFO'
         ),
         muteStatus,
         _react2.default.createElement(
@@ -11226,6 +11249,52 @@ var Menu = function (_React$Component) {
             'button',
             { onClick: this.handleStart },
             this.buttonText
+          )
+        ),
+        _react2.default.createElement(
+          _reactModal2.default,
+          {
+            className: 'nav-menu',
+            overlayClassName: 'nav-menu-overlay',
+            isOpen: this.state.infoOpen,
+            onRequestClose: this.closeInfo,
+            contentLabel: 'Modal'
+          },
+          _react2.default.createElement(
+            'div',
+            { className: 'info-modal' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Hello! My name is Kevin Dam and I lovingly dedicate this game to my little sisters, Lyn and Lily. For more information about me and this game, click below!'
+            ),
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'http://github.com/madnivek/Saving-Sister' },
+                  'GITHUB'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: 'http://kevin-dam.co' },
+                  'PORTFOLIO'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'button',
+              { onClick: this.handleStart },
+              this.buttonText
+            )
           )
         )
       );
@@ -11334,11 +11403,12 @@ var SavingSister = function () {
       this.gameOver = false;
       this.gameWin = false;
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
       var lilyImg = this.resources.get('./assets/character_sprites/lily_sprite.png');
       this.lily = new _sprite2.default({
         ctx: this.ctx,
         img: lilyImg,
-        pos: [847, 45],
+        pos: [840, 30],
         framePos: [0, 0],
         size: [lilyImg.width / 30, lilyImg.height],
         speed: 20,

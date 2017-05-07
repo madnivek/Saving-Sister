@@ -1,10 +1,10 @@
-# Sample JS Project Proposal: Saving Sister
+#Saving Sister
 
-### Saving Sister is a game inspired by classic side scrollers such as Super Mario World. The game features a young heroine named Lily who is on a journey to rescue her younger twin sister (Lyn) from the evil clutches of Voldemort.
+### Saving Sister is a game dedicated to my little sisters. The game features a young heroine named Lyn who is on a journey to rescue her younger twin sister (Lily) from the evil clutches of Voldemort. She battles her way through dementors and past Voldemort's spells to save the day!
 
 ### Functionality & MVP
 
-In this game, users will be able to:
+In this game, users are be able to:
 
 - [ ] Start a new game with one level
 - [ ] Move a character sprite using arrow key commands
@@ -21,7 +21,7 @@ This project will also include:
 The game will consist of a single game screen and all controls will be handled via the keyboard. Main controls include moving left and right, and jumping. Time permitting, a "shoot" button/feature will also be implemented.
 
 
-![wireframes](https://github.com/madnivek/Saving-Sister/blob/master/ss_wireframe.png)
+![wireframes](https://github.com/madnivek/Saving-Sister/blob/master/assets/ss_wireframe.png)
 
 ### Architecture and Technologies
 
