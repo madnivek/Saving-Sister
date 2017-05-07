@@ -55,6 +55,7 @@ button:focus {
 
 #canvas {
   position: relative;
+  margin: 0 auto;
 }
 
 #game-canvas, #background-canvas {
@@ -65,14 +66,19 @@ button:focus {
 
 .nav-button{
   position:absolute;
-  top: 30px;
-  left: 30px;
+  top: 15px;
+  left: 15px;
+}
+
+.nav-button.info {
+  top: 15px;
+  left: 85px;
 }
 
 .sound-button{
   position :absolute;
-  top: 30px;
-  left: 100px;
+  top: 15px;
+  left: 148px;
   width:33px;
   height:33px;
 }
@@ -110,4 +116,26 @@ button:focus {
   width: 500px;
   /*font-family: 'Tangerine', cursive;
 font-family: 'Italianno', cursive;*/
+}
+
+.info-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-modal p {
+  width: 600px;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.info-modal li {
+  padding-top:10px;
+  text-align: center;
+}
+
+.info-modal a {
+  color: inherit;
+  text-decoration: none;
 }

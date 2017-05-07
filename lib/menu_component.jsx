@@ -9,10 +9,22 @@ class Menu extends React.Component {
     Modal.setAppElement(appElement);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openInfo = this.openInfo.bind(this);
+    this.closeInfo = this.closeInfo.bind(this);
     this.handleStart = this.handleStart.bind(this);
     this.handleMute = this.handleMute.bind(this);
     this.buttonText = "START";
-    this.state = { modalIsOpen: true, mute: false};
+    this.state = { modalIsOpen: true, infoOpen: false, mute: false};
+  }
+
+
+  openInfo(){
+    if(this.props.ssGame.gameOver){
+      this.buttonText = "START";
+    }  else {
+      this.props.ssGame.togglePause();
+    }
+    this.setState({infoOpen: true});
   }
 
   openModal(){
@@ -26,6 +38,10 @@ class Menu extends React.Component {
 
   closeModal(){
     this.setState({modalIsOpen: false});
+  }
+
+  closeInfo(){
+    this.setState({infoOpen:false});
   }
 
   handleMute(){
@@ -47,6 +63,7 @@ class Menu extends React.Component {
       this.props.ssGame.togglePause();
     }
     this.closeModal();
+    this.closeInfo();
   }
 
   render(){
@@ -67,6 +84,7 @@ class Menu extends React.Component {
     return(
       <div className="nav-menu-parent">
         <button className="nav-button" onClick={ this.openModal }>MENU</button>
+        <button className="nav-button info" onClick={ this.openInfo }>INFO</button>
         { muteStatus }
         <Modal
           className="nav-menu"
@@ -93,6 +111,25 @@ class Menu extends React.Component {
             <li>Magic Missile: Space</li>
           </ul>
           <button onClick={ this.handleStart }>{this.buttonText}</button>
+        </Modal>
+
+        <Modal
+          className="nav-menu"
+          overlayClassName='nav-menu-overlay'
+          isOpen={this.state.infoOpen}
+          onRequestClose={this.closeInfo}
+          contentLabel="Modal"
+        >
+          <div className="info-modal">
+            <p>Hello! My name is Kevin Dam and I lovingly
+              dedicate this game to my little sisters, Lyn and Lily.
+              For more information about me and this game, click below!</p>
+            <ul>
+              <li><a href="http://github.com/madnivek/Saving-Sister">GITHUB</a></li>
+              <li><a href="http://kevin-dam.co">PORTFOLIO</a></li>
+            </ul>
+            <button onClick={ this.handleStart }>{this.buttonText}</button>
+          </div>
         </Modal>
       </div>
     );
