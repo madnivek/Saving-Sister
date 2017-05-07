@@ -1,12 +1,57 @@
 /*RESET*/
 
+@font-face { font-family: 'Lumos'; src: url('MagicSchoolOne.ttf'); }
+
 body, h1, h2, h3, p, div, nav, ul, li {
   margin: 0;
   padding: 0;
-  background: inherit;
+  background: transparent;
   font-family: inherit;
   color: inherit;
 }
+
+h1{
+  margin-top:40px;
+  font-family: 'Lumos';
+  font-size: 70px;
+  color: #422900;
+}
+
+h3{
+  font-family: 'Lumos';
+  font-size: 30px;
+  color: #422900;
+}
+
+ul {
+  list-style: none;
+  padding-left:0px;
+  padding-bottom:15px;
+}
+
+ul li {
+  font-family: 'Lumos';
+  font-size: 30px;
+  color: #422900;
+}
+
+button {
+  background: none;
+  border: 1px solid #422900;
+  border-radius: 5px;
+  font-family: 'Lumos';
+  font-size: 20px;
+  color: #422900;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
 
 #canvas {
   position: relative;
@@ -24,6 +69,14 @@ body, h1, h2, h3, p, div, nav, ul, li {
   left: 30px;
 }
 
+.sound-button{
+  position :absolute;
+  top: 30px;
+  left: 100px;
+  width:33px;
+  height:33px;
+}
+
 .intro-text {
   letter-spacing: .15em;
   width:300px;
@@ -31,14 +84,15 @@ body, h1, h2, h3, p, div, nav, ul, li {
 
 .nav-menu {
   position: relative;
-  background: grey;
-  width: 1157px;
-  height: 855px;
-  left:20px;
-  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../backgrounds/menu-background.jpg');
+  background-size: cover;
+  width: 900px;
+  height: 675px;
   border: none;
   outline: none;
-  background: white;
 }
 
 .nav-menu-overlay {
@@ -46,4 +100,14 @@ body, h1, h2, h3, p, div, nav, ul, li {
   background: transparent;
   height: 1500px;
   width: 1500px;
+}
+
+.nav-menu p {
+  font-family: 'Tangerine', cursive;
+  font-size: 35px;
+  color: #422900;
+  text-align: justify;
+  width: 500px;
+  /*font-family: 'Tangerine', cursive;
+font-family: 'Italianno', cursive;*/
 }

@@ -20,13 +20,25 @@ document.addEventListener('DOMContentLoaded', () => {
     './assets/platforms/grass-mid.png',
     './assets/platforms/grass-single.png',
     './assets/other/bolt_sprite.png',
+    './assets/other/game_over.png',
+    './assets/other/game_win.png',
     './assets/other/magic-missile.png'
   ]);
+
+  const audio = {
+    jumpSound: new Audio('./assets/audio/jump.ogg'),
+    dementorDeath: new Audio('./assets/audio/dementor_death.mp3'),
+    missileSound: new Audio('./assets/audio/missile.mp3'),
+    gameOver: new Audio('./assets/audio/game_over.mp3'),
+  };
+
+  window.music = new Audio('./assets/audio/music.mp3');
+  window.music.play();
 
   setInputListeners();
 
   resources.onReady( () => {
-    const background = document.getElementById('background-canvas')
+    const background = document.getElementById('background-canvas');
     background.width = 900;
     background.height = 675;
     const bgCtx = background.getContext("2d");
@@ -34,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     bgCtx.fillStyle = bgPattern;
     bgCtx.fillRect(0,0,background.width, background.height);
 
-    const gameCanvas = document.getElementById('game-canvas')
+    const gameCanvas = document.getElementById('game-canvas');
     const gameCtx = gameCanvas.getContext("2d");
     gameCanvas.width = 900;
     gameCanvas.height = 675;
 
-    const ssGame = new SavingSister(gameCtx, gameCanvas, resources);
+    const ssGame = new SavingSister(gameCtx, gameCanvas, resources, audio);
 
     ReactDOM.render(<Menu ssGame={ssGame} />, document.getElementById('menu'));
 
