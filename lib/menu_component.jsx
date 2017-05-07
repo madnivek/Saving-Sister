@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 class Menu extends React.Component {
   constructor(props){
     super(props);
-    const appElement = document.getElementById('canvas');
+    const appElement = document.getElementById('menu');
     Modal.setAppElement(appElement);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -82,15 +82,13 @@ class Menu extends React.Component {
     }
 
     return(
-      <div className="nav-menu-parent">
+      <div id="nav-menu-parent">
         <button className="nav-button" onClick={ this.openModal }>MENU</button>
         <button className="nav-button info" onClick={ this.openInfo }>INFO</button>
         { muteStatus }
         <Modal
           className="nav-menu"
-          overlayClassName='nav-menu-overlay'
           isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
           contentLabel="Modal"
         >
           <h1>Saving Sister</h1>
@@ -115,15 +113,14 @@ class Menu extends React.Component {
 
         <Modal
           className="nav-menu"
-          overlayClassName='nav-menu-overlay'
           isOpen={this.state.infoOpen}
-          onRequestClose={this.closeInfo}
           contentLabel="Modal"
         >
           <div className="info-modal">
-            <p>Hello! My name is Kevin Dam and I lovingly
-              dedicate this game to my little sisters, Lyn and Lily.
-              For more information about me and this game, click below!</p>
+            <p>Hello there and thanks for playing Saving Sisters!
+              My name is Kevin Dam and I am proud to dedicate this game to my little
+              sisters Lyn and Lily, who have always given me inspiration. For more information
+              about me and this game, click below!</p>
             <ul>
               <li><a href="http://github.com/madnivek/Saving-Sister">GITHUB</a></li>
               <li><a href="http://kevin-dam.co">PORTFOLIO</a></li>

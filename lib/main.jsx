@@ -38,13 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setInputListeners();
 
   resources.onReady( () => {
-    const background = document.getElementById('background-canvas');
-    background.width = 900;
-    background.height = 675;
-    const bgCtx = background.getContext("2d");
-    const bgPattern = bgCtx.createPattern(resources.get('./assets/backgrounds/world-background.png'), 'repeat');
-    bgCtx.fillStyle = bgPattern;
-    bgCtx.fillRect(0,0,background.width, background.height);
 
     const gameCanvas = document.getElementById('game-canvas');
     const gameCtx = gameCanvas.getContext("2d");

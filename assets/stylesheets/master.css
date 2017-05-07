@@ -52,17 +52,21 @@ button:focus {
   outline: none;
 }
 
-
-#canvas {
+#background{
   position: relative;
+  width: 900px;
+  height: 675px;
+  background-image: url('../backgrounds/world-background.png');
   margin: 0 auto;
 }
 
-#game-canvas, #background-canvas {
+#game-canvas{
   position: absolute;
+  margin: 0 auto;
 }
 
 /*NAV MENU*/
+
 
 .nav-button{
   position:absolute;
@@ -89,10 +93,10 @@ button:focus {
 }
 
 .nav-menu {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   background-image: url('../backgrounds/menu-background.jpg');
   background-size: cover;
   width: 900px;
@@ -100,13 +104,14 @@ button:focus {
   border: none;
   outline: none;
 }
-
-.nav-menu-overlay {
+/*
+.nav-menu-overlay{
   position: absolute;
-  background: transparent;
-  height: 1500px;
-  width: 1500px;
-}
+  height:675px;
+  width:900px;
+  margin: 0 auto;
+  background: black;
+}*/
 
 .nav-menu p {
   font-family: 'Tangerine', cursive;
@@ -119,6 +124,7 @@ font-family: 'Italianno', cursive;*/
 }
 
 .info-modal {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;

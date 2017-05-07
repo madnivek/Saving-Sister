@@ -11094,7 +11094,7 @@ var Menu = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
-    var appElement = document.getElementById('canvas');
+    var appElement = document.getElementById('menu');
     _reactModal2.default.setAppElement(appElement);
     _this.openModal = _this.openModal.bind(_this);
     _this.closeModal = _this.closeModal.bind(_this);
@@ -11182,7 +11182,7 @@ var Menu = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'nav-menu-parent' },
+        { id: 'nav-menu-parent' },
         _react2.default.createElement(
           'button',
           { className: 'nav-button', onClick: this.openModal },
@@ -11198,9 +11198,7 @@ var Menu = function (_React$Component) {
           _reactModal2.default,
           {
             className: 'nav-menu',
-            overlayClassName: 'nav-menu-overlay',
             isOpen: this.state.modalIsOpen,
-            onRequestClose: this.closeModal,
             contentLabel: 'Modal'
           },
           _react2.default.createElement(
@@ -11255,9 +11253,7 @@ var Menu = function (_React$Component) {
           _reactModal2.default,
           {
             className: 'nav-menu',
-            overlayClassName: 'nav-menu-overlay',
             isOpen: this.state.infoOpen,
-            onRequestClose: this.closeInfo,
             contentLabel: 'Modal'
           },
           _react2.default.createElement(
@@ -11266,7 +11262,7 @@ var Menu = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'Hello! My name is Kevin Dam and I lovingly dedicate this game to my little sisters, Lyn and Lily. For more information about me and this game, click below!'
+              'Hello there and thanks for playing Saving Sisters! My name is Kevin Dam and I am proud to dedicate this game to my little sisters Lyn and Lily, who have always given me inspiration. For more information about me and this game, click below!'
             ),
             _react2.default.createElement(
               'ul',
@@ -11998,13 +11994,6 @@ document.addEventListener('DOMContentLoaded', function () {
   (0, _input2.default)();
 
   resources.onReady(function () {
-    var background = document.getElementById('background-canvas');
-    background.width = 900;
-    background.height = 675;
-    var bgCtx = background.getContext("2d");
-    var bgPattern = bgCtx.createPattern(resources.get('./assets/backgrounds/world-background.png'), 'repeat');
-    bgCtx.fillStyle = bgPattern;
-    bgCtx.fillRect(0, 0, background.width, background.height);
 
     var gameCanvas = document.getElementById('game-canvas');
     var gameCtx = gameCanvas.getContext("2d");
