@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   resources.load([
     './assets/backgrounds/world-background.png',
     './assets/character_sprites/lyn_sprite.png',
+    './assets/character_sprites/lily_sprite.png',
+    './assets/character_sprites/dementor.png',
     './assets/character_sprites/voldemort.png',
     './assets/platforms/grass-left.png',
     './assets/platforms/grass-right.png',
