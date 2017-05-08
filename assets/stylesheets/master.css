@@ -1,6 +1,6 @@
 /*RESET*/
 
-@font-face { font-family: 'Lumos'; src: url('MagicSchoolOne.ttf'); }
+@font-face { font-family: 'magic-font'; src: url('magic-font.woff'); }
 
 body, h1, h2, h3, p, div, nav, ul, li {
   margin: 0;
@@ -12,14 +12,16 @@ body, h1, h2, h3, p, div, nav, ul, li {
 
 h1{
   margin-top:40px;
-  font-family: 'Lumos';
+  font-family: 'magic-font';
+  font-weight:lighter;
   font-size: 70px;
   color: #422900;
 }
 
 h3{
-  font-family: 'Lumos';
+  font-family: 'magic-font';
   font-size: 30px;
+  font-weight:lighter;
   color: #422900;
 }
 
@@ -30,7 +32,8 @@ ul {
 }
 
 ul li {
-  font-family: 'Lumos';
+  font-family: 'magic-font';
+  font-weight:lighter;
   font-size: 30px;
   color: #422900;
 }
@@ -39,7 +42,8 @@ button {
   background: none;
   border: 1px solid #422900;
   border-radius: 5px;
-  font-family: 'Lumos';
+  font-family: 'magic-font';
+  font-weight:lighter;
   font-size: 20px;
   color: #422900;
 }
