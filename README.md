@@ -72,6 +72,30 @@ checkCollision(obj1, obj2){
 }
 ```
 
+#### Platform Generator
+
+Platforms are generated using platform maps that are passed to a PlatformGenerator class that reads the map and creates all Platform. This allows for easy addition of different maps and levels in the future!
+
+```javascript
+//saving-sister.js
+
+const platformMap = [
+  {pos:[0,640], size:38},
+  {pos: [787.5, 75], size: 4},
+  {pos:[0,550], size: 5},
+  {pos:[200, 500], size: 5},
+  {pos:[400, 450], size: 5},
+  {pos:[600, 400], size: 5},
+  {pos:[400, 350], size: 5},
+  {pos:[200, 300], size: 5},
+  {pos:[0, 250], size: 5},
+  {pos:[200, 150], size: 35}
+];
+
+const platformGenerator = new PlatformGenerator(this.ctx, this.resources, platformMap);
+
+```
+
 ### Future Additions
 
 * Difficulty options!
