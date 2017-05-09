@@ -9,8 +9,9 @@ The project is implemented using the following technologies:
 - `HTML5 Canvas` for visual rendering to the page
 - Assets are either self-made or obtained from OpenGameArt.com and Kenney.nl
 
-![Screenshot 1]()
-![Screenshot 2]()
+![Screenshot 1](https://github.com/madnivek/Saving-Sister/blob/master/docs/main-menu-screenshot.png)
+
+![Screenshot 2](https://github.com/madnivek/Saving-Sister/blob/master/docs/game-screenshot.png)
 
 ### Highlights
 
