@@ -11355,7 +11355,7 @@ var SavingSister = function () {
     this.dementors = [];
     this.boltTimer = 0;
     this.dementorTimer = 0;
-    this.difficulty = 25;
+    this.difficulty = 45;
     this.pause = true;
     this.gameOver = true;
     this.gameWin = false;
@@ -11903,7 +11903,7 @@ var MagicMissile = function () {
     this.height = this.img.height;
     this.width = this.img.width / 25;
     this.done = false;
-    this.speed = 250;
+    this.speed = 500;
     this.dir = dir;
     this.index = 0;
   }
