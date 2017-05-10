@@ -14,6 +14,10 @@ class Menu extends React.Component {
     this.handleStart = this.handleStart.bind(this);
     this.handleMute = this.handleMute.bind(this);
     this.buttonText = "START";
+    this.handleResetKeypress = this.handleResetKeypress.bind(this);
+
+    document.addEventListener("keydown", this.handleResetKeypress);
+
     this.state = { modalIsOpen: true, infoOpen: false, mute: false};
   }
 
@@ -56,14 +60,25 @@ class Menu extends React.Component {
 
   handleStart(){
     if(this.buttonText === "START"){
-      this.props.ssGame.reset();
-      this.props.ssGame.init();
-      this.buttonText = "CONTINUE";
+      this.resetGame();
     } else {
       this.props.ssGame.togglePause();
     }
     this.closeModal();
     this.closeInfo();
+  }
+
+  handleResetKeypress(e){
+    if(e.key === 'r' && this.props.ssGame.gameOver){
+      this.resetGame();
+      this.closeModal();
+    }
+  }
+
+  resetGame(){
+    this.props.ssGame.reset();
+    this.props.ssGame.init();
+    this.buttonText = "CONTINUE";
   }
 
   render(){

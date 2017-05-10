@@ -11103,6 +11103,10 @@ var Menu = function (_React$Component) {
     _this.handleStart = _this.handleStart.bind(_this);
     _this.handleMute = _this.handleMute.bind(_this);
     _this.buttonText = "START";
+    _this.handleResetKeypress = _this.handleResetKeypress.bind(_this);
+
+    document.addEventListener("keydown", _this.handleResetKeypress);
+
     _this.state = { modalIsOpen: true, infoOpen: false, mute: false };
     return _this;
   }
@@ -11152,14 +11156,27 @@ var Menu = function (_React$Component) {
     key: 'handleStart',
     value: function handleStart() {
       if (this.buttonText === "START") {
-        this.props.ssGame.reset();
-        this.props.ssGame.init();
-        this.buttonText = "CONTINUE";
+        this.resetGame();
       } else {
         this.props.ssGame.togglePause();
       }
       this.closeModal();
       this.closeInfo();
+    }
+  }, {
+    key: 'handleResetKeypress',
+    value: function handleResetKeypress(e) {
+      if (e.key === 'r' && this.props.ssGame.gameOver) {
+        this.resetGame();
+        this.closeModal();
+      }
+    }
+  }, {
+    key: 'resetGame',
+    value: function resetGame() {
+      this.props.ssGame.reset();
+      this.props.ssGame.init();
+      this.buttonText = "CONTINUE";
     }
   }, {
     key: 'render',
@@ -11357,7 +11374,7 @@ var SavingSister = function () {
     this.dementorTimer = 0;
     this.difficulty = 45;
     this.pause = true;
-    this.gameOver = true;
+    this.gameOver = false;
     this.gameWin = false;
     this.togglePause = this.togglePause.bind(this);
     this.reset = this.reset.bind(this);
@@ -11396,6 +11413,8 @@ var SavingSister = function () {
   }, {
     key: 'init',
     value: function init() {
+      var _this = this;
+
       this.gameOver = false;
       this.gameWin = false;
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -11438,6 +11457,10 @@ var SavingSister = function () {
         jumpSound: this.audio.jumpSound
       });
 
+      lynImg.addEventListener('click', function () {
+        return _this.player.jump();
+      });
+
       this.run();
     }
   }, {
@@ -11478,7 +11501,7 @@ var SavingSister = function () {
   }, {
     key: 'checkMissiles',
     value: function checkMissiles() {
-      var _this = this;
+      var _this2 = this;
 
       if (window.input.isDown('SPACE') && this.missile_time_delay <= 0) {
         this.audio.missileSound.play();
@@ -11490,7 +11513,7 @@ var SavingSister = function () {
 
       this.missiles.forEach(function (missile, index) {
         if (missile.done === true) {
-          _this.missiles.splice(index, 1);
+          _this2.missiles.splice(index, 1);
         }
       });
     }
@@ -11543,18 +11566,18 @@ var SavingSister = function () {
   }, {
     key: 'updateDementors',
     value: function updateDementors(dt) {
-      var _this2 = this;
+      var _this3 = this;
 
       this.dementors.forEach(function (dementor, index) {
-        if (_this2.checkCollision(_this2.player, dementor)) {
-          _this2.triggerGameOver();
+        if (_this3.checkCollision(_this3.player, dementor)) {
+          _this3.triggerGameOver();
         }
 
-        _this2.missiles.forEach(function (missile) {
-          if (_this2.checkCollision(missile, dementor)) {
-            _this2.audio.dementorDeath.play();
-            _this2.ctx.clearRect(dementor.x, dementor.y, dementor.width, dementor.height);
-            _this2.dementors.splice(index, 1);
+        _this3.missiles.forEach(function (missile) {
+          if (_this3.checkCollision(missile, dementor)) {
+            _this3.audio.dementorDeath.play();
+            _this3.ctx.clearRect(dementor.x, dementor.y, dementor.width, dementor.height);
+            _this3.dementors.splice(index, 1);
           }
         });
 
@@ -11564,7 +11587,7 @@ var SavingSister = function () {
   }, {
     key: 'updateBolts',
     value: function updateBolts(dt) {
-      var _this3 = this;
+      var _this4 = this;
 
       var boltsToDelete = [];
       this.bolts.forEach(function (bolt, index) {
@@ -11572,25 +11595,25 @@ var SavingSister = function () {
           boltsToDelete.push(index);
         }
 
-        if (_this3.checkCollision(bolt, _this3.player)) {
-          _this3.triggerGameOver();
+        if (_this4.checkCollision(bolt, _this4.player)) {
+          _this4.triggerGameOver();
         }
         bolt.update(dt);
       });
       boltsToDelete.forEach(function (bolt_index) {
-        return _this3.bolts.splice(bolt_index, 1);
+        return _this4.bolts.splice(bolt_index, 1);
       });
     }
   }, {
     key: 'updateMissiles',
     value: function updateMissiles(dt) {
-      var _this4 = this;
+      var _this5 = this;
 
       this.missiles.forEach(function (missile) {
         missile.update(dt);
-        if (_this4.checkCollision(missile, _this4.voldemort)) {
-          _this4.gameOver = true;
-          _this4.gameWin = true;
+        if (_this5.checkCollision(missile, _this5.voldemort)) {
+          _this5.gameOver = true;
+          _this5.gameWin = true;
         }
       });
     }
