@@ -11235,31 +11235,8 @@ var Menu = function (_React$Component) {
             null,
             'Controls:'
           ),
+          _react2.default.createElement('img', { src: './other/keyboard-map.png' }),
           _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(
-              'li',
-              null,
-              'Move Left: Left Arrow'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              'Move Right: Right Arrow'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              'Jump: Up Arrow'
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              'Magic Missile: Space'
-            )
-          ),
           _react2.default.createElement(
             'button',
             { onClick: this.handleStart },

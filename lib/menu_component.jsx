@@ -116,13 +116,8 @@ class Menu extends React.Component {
           </p>
           <br/>
           <h3>Controls:</h3>
+          <img src="./other/keyboard-map.png"/>
           <br/>
-          <ul>
-            <li>Move Left: Left Arrow</li>
-            <li>Move Right: Right Arrow</li>
-            <li>Jump: Up Arrow</li>
-            <li>Magic Missile: Space</li>
-          </ul>
           <button onClick={ this.handleStart }>{this.buttonText}</button>
         </Modal>
 
