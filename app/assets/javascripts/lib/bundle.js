@@ -11227,7 +11227,7 @@ var Menu = function (_React$Component) {
           _react2.default.createElement(
             'p',
             null,
-            'Your name is Lyn Pham, a young master wizard. Your twin sister Lily has been taken hostage by Lord Voldemort! Get past the dementors and the rain of Avada Kedavras to take down Voldemort and rescue your dear sister!'
+            'Your name is Lyn Pham, a young master wizard. Your twin sister Lily has been taken hostage by Lord Voldemort! To free her, reach Voldemort and give take him down with your magic! Be careful to avoid his slew of Avada Kedavras and his army of dementors!'
           ),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
@@ -11235,7 +11235,7 @@ var Menu = function (_React$Component) {
             null,
             'Controls:'
           ),
-          _react2.default.createElement('img', { src: './other/keyboard-map.png' }),
+          _react2.default.createElement('img', { src: './assets/other/keyboard-map.png' }),
           _react2.default.createElement('br', null),
           _react2.default.createElement(
             'button',
@@ -11458,7 +11458,7 @@ var SavingSister = function () {
         if (i % 2 === 0) {
           position = [1000, Math.random() * 650];
         } else {
-          position = [Math.random(900), -100];
+          position = [0, -100];
         }
 
         this.dementors.push(new _sprite2.default({
