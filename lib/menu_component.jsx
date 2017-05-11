@@ -110,13 +110,13 @@ class Menu extends React.Component {
           <br/>
           <p>
             Your name is Lyn Pham, a young master wizard. Your twin sister
-            Lily has been taken hostage by Lord Voldemort! Get past the dementors
-            and the rain of Avada Kedavras to take down Voldemort and rescue your
-            dear sister!
+            Lily has been taken hostage by Lord Voldemort! To free her, reach Voldemort
+            and give take him down with your magic! Be careful to avoid his slew of Avada
+            Kedavras and his army of dementors!
           </p>
           <br/>
           <h3>Controls:</h3>
-          <img src="./other/keyboard-map.png"/>
+          <img src="./assets/other/keyboard-map.png"/>
           <br/>
           <button onClick={ this.handleStart }>{this.buttonText}</button>
         </Modal>
