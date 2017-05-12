@@ -13,7 +13,7 @@ class Menu extends React.Component {
     this.closeInfo = this.closeInfo.bind(this);
     this.handleStart = this.handleStart.bind(this);
     this.handleMute = this.handleMute.bind(this);
-    this.buttonText = "START";
+    this.buttonText = "START GAME";
     this.handleResetKeypress = this.handleResetKeypress.bind(this);
 
     document.addEventListener("keydown", this.handleResetKeypress);
@@ -24,7 +24,7 @@ class Menu extends React.Component {
 
   openInfo(){
     if(this.props.ssGame.gameOver){
-      this.buttonText = "START";
+      this.buttonText = "START GAME";
     }  else {
       this.props.ssGame.togglePause();
     }
@@ -33,7 +33,7 @@ class Menu extends React.Component {
 
   openModal(){
     if(this.props.ssGame.gameOver){
-      this.buttonText = "START";
+      this.buttonText = "START GAME";
     }  else {
       this.props.ssGame.togglePause();
     }
@@ -59,7 +59,7 @@ class Menu extends React.Component {
   }
 
   handleStart(){
-    if(this.buttonText === "START"){
+    if(this.buttonText === "START GAME"){
       this.resetGame();
     } else {
       this.props.ssGame.togglePause();
@@ -127,13 +127,15 @@ class Menu extends React.Component {
           contentLabel="Modal"
         >
           <div className="info-modal">
-            <p>Hello there and thanks for playing Saving Sisters!
+            <p>Thanks for playing Saving Sisters!
               My name is Kevin Dam and I am proud to dedicate this game to my little
-              sisters Lyn and Lily, who have always given me inspiration. For more information
+              sisters Lyn and Lily, who have always believed in me and given me inspiration. For more information
               about me and this game, click below!</p>
             <ul>
-              <li><a href="http://github.com/madnivek/Saving-Sister">GITHUB</a></li>
-              <li><a href="http://kevin-dam.co">PORTFOLIO</a></li>
+              <li><a title="Portfolio" href="http://www.kevin-dam.co" target="_blank"><i className="fa fa-folder-open" aria-hidden="true"></i></a></li>
+              <li><a title="GitHub" href="http://github.com/madnivek/Saving-Sister" target="_blank"><i className="fa fa-github-alt" aria-hidden="true"></i></a></li>
+              <li><a title="LinkedIn" href="http://www.linkedin.com/in/kevin-dam-50099313/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a title="AngelList" href="https://angel.co/kevin-dam-4" target="_blank"D><i className="fa fa-angellist" aria-hidden="true"></i></a></li>
             </ul>
             <button onClick={ this.handleStart }>{this.buttonText}</button>
           </div>

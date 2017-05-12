@@ -11102,7 +11102,7 @@ var Menu = function (_React$Component) {
     _this.closeInfo = _this.closeInfo.bind(_this);
     _this.handleStart = _this.handleStart.bind(_this);
     _this.handleMute = _this.handleMute.bind(_this);
-    _this.buttonText = "START";
+    _this.buttonText = "START GAME";
     _this.handleResetKeypress = _this.handleResetKeypress.bind(_this);
 
     document.addEventListener("keydown", _this.handleResetKeypress);
@@ -11115,7 +11115,7 @@ var Menu = function (_React$Component) {
     key: 'openInfo',
     value: function openInfo() {
       if (this.props.ssGame.gameOver) {
-        this.buttonText = "START";
+        this.buttonText = "START GAME";
       } else {
         this.props.ssGame.togglePause();
       }
@@ -11125,7 +11125,7 @@ var Menu = function (_React$Component) {
     key: 'openModal',
     value: function openModal() {
       if (this.props.ssGame.gameOver) {
-        this.buttonText = "START";
+        this.buttonText = "START GAME";
       } else {
         this.props.ssGame.togglePause();
       }
@@ -11155,7 +11155,7 @@ var Menu = function (_React$Component) {
   }, {
     key: 'handleStart',
     value: function handleStart() {
-      if (this.buttonText === "START") {
+      if (this.buttonText === "START GAME") {
         this.resetGame();
       } else {
         this.props.ssGame.togglePause();
@@ -11256,7 +11256,7 @@ var Menu = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'Hello there and thanks for playing Saving Sisters! My name is Kevin Dam and I am proud to dedicate this game to my little sisters Lyn and Lily, who have always given me inspiration. For more information about me and this game, click below!'
+              'Thanks for playing Saving Sisters! My name is Kevin Dam and I am proud to dedicate this game to my little sisters Lyn and Lily, who have always believed in me and given me inspiration. For more information about me and this game, click below!'
             ),
             _react2.default.createElement(
               'ul',
@@ -11266,8 +11266,8 @@ var Menu = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: 'http://github.com/madnivek/Saving-Sister' },
-                  'GITHUB'
+                  { title: 'Portfolio', href: 'http://www.kevin-dam.co', target: '_blank' },
+                  _react2.default.createElement('i', { className: 'fa fa-folder-open', 'aria-hidden': 'true' })
                 )
               ),
               _react2.default.createElement(
@@ -11275,8 +11275,26 @@ var Menu = function (_React$Component) {
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: 'http://kevin-dam.co' },
-                  'PORTFOLIO'
+                  { title: 'GitHub', href: 'http://github.com/madnivek/Saving-Sister', target: '_blank' },
+                  _react2.default.createElement('i', { className: 'fa fa-github-alt', 'aria-hidden': 'true' })
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { title: 'LinkedIn', href: 'http://www.linkedin.com/in/kevin-dam-50099313/', target: '_blank' },
+                  _react2.default.createElement('i', { className: 'fa fa-linkedin', 'aria-hidden': 'true' })
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { title: 'AngelList', href: 'https://angel.co/kevin-dam-4', target: '_blank', D: true },
+                  _react2.default.createElement('i', { className: 'fa fa-angellist', 'aria-hidden': 'true' })
                 )
               )
             ),

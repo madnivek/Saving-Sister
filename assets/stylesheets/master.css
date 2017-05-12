@@ -15,14 +15,14 @@ h1{
   font-family: 'magic-font';
   font-weight:lighter;
   font-size: 70px;
-  color: #422900;
+  color: #603913;
 }
 
 h3{
   font-family: 'magic-font';
   font-size: 30px;
   font-weight:lighter;
-  color: #422900;
+  color: #603913;
 }
 
 ul {
@@ -35,17 +35,17 @@ ul li {
   font-family: 'magic-font';
   font-weight:lighter;
   font-size: 30px;
-  color: #422900;
+  color: #603913;
 }
 
 button {
   background: none;
-  border: 1px solid #422900;
+  border: 1px solid #603913;
   border-radius: 5px;
   font-family: 'magic-font';
   font-weight:lighter;
   font-size: 20px;
-  color: #422900;
+  color: #603913;
 }
 
 button:hover {
@@ -120,7 +120,7 @@ button:focus {
 .nav-menu p {
   font-family: 'Tangerine', cursive;
   font-size: 35px;
-  color: #422900;
+  color: #603913;
   text-align: justify;
   width: 500px;
   /*font-family: 'Tangerine', cursive;
@@ -138,11 +138,32 @@ font-family: 'Italianno', cursive;*/
 }
 
 .info-modal p {
-  padding-top: 100px;
+  padding-top: 170px;
+  width: 570px;
 }
 
 .info-modal ul {
+  margin-top: 20px;
   display: flex;
-  width: 300px;
+  width: 500px;
   justify-content: space-between;
+}
+
+.info-modal li {
+  height:75px;
+  width:75px;
+  /*border: 1px solid #603913;
+  border-radius: 3px;*/
+}
+
+.info-modal i {
+  font-size: 55px;
+  padding-left: 13px;
+  padding-top: 10px;
+  color: #603913;
+  text-shadow: -1px -1px black;
+}
+
+.info-modal button {
+  margin-top: 20px;
 }
