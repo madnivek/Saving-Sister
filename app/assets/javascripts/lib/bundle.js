@@ -6787,6 +6787,7 @@ var Sprite = function () {
     value: function updateFollow(dt) {
       var dX = this.x - this.followed_object.x;
       var dY = this.y - this.followed_object.y;
+      var slope = Math.abs(dX / dY);
 
       if (dX < 5) {
         this.selectFrames = this.frames.slice(Math.floor(this.frames.length / 2));
@@ -6794,9 +6795,9 @@ var Sprite = function () {
         this.selectFrames = this.frames.slice(0, Math.floor(this.frames.length / 2));
       }
 
-      if (dX > 0) {
+      if (dX > 1) {
         this.x -= dt * this.followSpeed;
-      } else if (dX < 0) {
+      } else if (dX < -1) {
         this.x += dt * this.followSpeed;
       }
 
